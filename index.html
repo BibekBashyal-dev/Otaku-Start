@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime World</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="theme.js" defer></script>
+</head>
+<body>
+        <div id="timetravel-overlay" style="display:none;"></div>
+                        <!-- Removed particle and gradient overlays -->
+                        <div id="intro-premium" class="intro-premium-bg">
+                                <div class="intro-premium-card">
+                                        <h1 class="intro-premium-title">ANIME WORLD</h1>
+                                        <p class="intro-premium-desc">Step into a world of legends, heroes, and dreams.</p>
+                                        <button id="enter-btn" class="premium-btn">ENTER THE WORLD</button>
+                                </div>
+                        </div>
+        <div id="main-content" style="display:none;">
+                        <div class="premium-gallery-header">
+                                <h1 class="premium-gallery-title">Anime Gallery</h1>
+                                <p class="premium-gallery-desc">Select an anime to explore its world in detail.</p>
+                        </div>
+                        <div class="premium-anime-gallery">
+            <div class="gallery-bg-text">We <span class="love-word">Love</span> Anime</div>
+                                <div class="neon-box"><div class="premium-anime-card" data-title="Demon Slayer" data-img="https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/7/7e/Tanjiro_anime.png" data-desc="Tanjiro Kamado battles demons to save his sister and avenge his family.">
+                                        <div class="premium-anime-img" style="background-image:url('https://i.pinimg.com/736x/81/c7/9c/81c79cb8cfcb320fb7890403fc9bc81d.jpg');"></div>
+                                        <div class="premium-anime-info">
+                                                <h2>Demon Slayer</h2>
+                                                <button class="premium-view-btn">View Details</button>
+                                        </div>
+                                </div></div>
+                                <div class="neon-box"><div class="premium-anime-card" data-title="Jujutsu Kaisen" data-img="https://static.wikia.nocookie.net/jujutsu-kaisen/images/2/2b/Yuji_Itadori_Anime.png" data-desc="Yuji Itadori joins a secret organization to fight curses and save people.">
+                                        <div class="premium-anime-img" style="background-image:url('https://i.pinimg.com/736x/64/64/5d/64645d25e6da2946cbb68468af7f3fe1.jpg');"></div>
+                                        <div class="premium-anime-info">
+                                                <h2>Jujutsu Kaisen</h2>
+                                                <button class="premium-view-btn">View Details</button>
+                                        </div>
+                                </div></div>
+                                <div class="neon-box"><div class="premium-anime-card" data-title="Death Note" data-img="https://static.wikia.nocookie.net/deathnote/images/6/6f/Light_Yagami_Anime.png" data-desc="Light Yagami discovers a notebook that lets him kill anyone by writing their name.">
+                                        <div class="premium-anime-img" style="background-image:url('https://i.pinimg.com/736x/26/c9/59/26c959ce14f93edec69c6dfcb4466e75.jpg');"></div>
+                                        <div class="premium-anime-info">
+                                                <h2>Death Note</h2>
+                                                <button class="premium-view-btn">View Details</button>
+                                        </div>
+                                </div></div>
+                                <div class="neon-box"><div class="premium-anime-card" data-title="Dragon Ball Z" data-img="https://static.wikia.nocookie.net/dragonball/images/2/2e/Goku_Anime.png" data-desc="Goku and his friends defend Earth from powerful foes in epic battles.">
+                                        <div class="premium-anime-img" style="background-image:url('https://i.pinimg.com/1200x/5c/ce/9e/5cce9e0ad9e97fc89d76af75889d4751.jpg');"></div>
+                                        <div class="premium-anime-info">
+                                                <h2>Dragon Ball Z</h2>
+                                                <button class="premium-view-btn">View Details</button>
+                                        </div>
+                                </div></div>
+                                <div class="neon-box"><div class="premium-anime-card" data-title="Fullmetal Alchemist: Brotherhood" data-img="https://static.wikia.nocookie.net/fma/images/7/7e/Edward_Elric_Anime.png" data-desc="Edward and Alphonse Elric search for the Philosopher's Stone to restore their bodies.">
+                                        <div class="premium-anime-img" style="background-image:url('https://i.pinimg.com/1200x/44/79/4e/44794e8ad7086f33999dda99691583a9.jpg');"></div>
+                                        <div class="premium-anime-info">
+                                                <h2>Fullmetal Alchemist: Brotherhood</h2>
+                                                <button class="premium-view-btn">View Details</button>
+                                        </div>
+                                </div></div>
+                                <div class="neon-box"><div class="premium-anime-card" data-title="Tokyo Ghoul" data-img="https://static.wikia.nocookie.net/tokyoghoul/images/2/2e/Kaneki_anime.png" data-desc="Ken Kaneki becomes a half-ghoul and struggles to live between two worlds.">
+                                        <div class="premium-anime-img" style="background-image:url('https://i.pinimg.com/736x/be/b7/93/beb793f9910a825ae7e2accb2f8d96c3.jpg');"></div>
+                                        <div class="premium-anime-info">
+                                                <h2>Tokyo Ghoul</h2>
+                                                <button class="premium-view-btn">View Details</button>
+                                        </div>
+                                </div></div>
+                                <div class="neon-box"><div class="premium-anime-card" data-title="Sword Art Online" data-img="https://static.wikia.nocookie.net/swordartonline/images/7/7e/Kirito_Anime.png" data-desc="Players are trapped in a virtual reality MMORPG where dying in the game means dying in real life.">
+                                        <div class="premium-anime-img" style="background-image:url('https://i.pinimg.com/736x/12/57/fc/1257fc8793f2e9e36db63e62ad29fff8.jpg');"></div>
+                                        <div class="premium-anime-info">
+                                                <h2>Sword Art Online</h2>
+                                                <button class="premium-view-btn">View Details</button>
+                                        </div>
+                                </div></div>
+                                <div class="neon-box"><div class="premium-anime-card" data-title="Bleach" data-img="https://static.wikia.nocookie.net/bleach/images/7/7e/Ichigo_Kurosaki_Anime.png" data-desc="Ichigo Kurosaki gains the powers of a Soul Reaper to protect the living and the dead.">
+                                        <div class="premium-anime-img" style="background-image:url('https://i.pinimg.com/736x/00/b1/ec/00b1ec4de7d8f567c7bac179a095b680.jpg');"></div>
+                                        <div class="premium-anime-info">
+                                                <h2>Bleach</h2>
+                                                <button class="premium-view-btn">View Details</button>
+                                        </div>
+                                </div></div>
+                                <div class="neon-box"><div class="premium-anime-card" data-title="One Punch Man" data-img="https://static.wikia.nocookie.net/onepunchman/images/7/7e/Saitama_Anime.png" data-desc="Saitama can defeat any opponent with a single punch, but seeks a real challenge.">
+                                        <div class="premium-anime-img" style="background-image:url('https://i.pinimg.com/1200x/7e/54/37/7e5437e9362cf37d9058b9d11118fb8f.jpg');"></div>
+                                        <div class="premium-anime-info">
+                                                <h2>One Punch Man</h2>
+                                                <button class="premium-view-btn">View Details</button>
+                                        </div>
+                                </div></div>
+                                <div class="neon-box"><div class="premium-anime-card" data-title="Hunter x Hunter" data-img="https://static.wikia.nocookie.net/hunterxhunter/images/7/7e/Gon_Freecss_Anime.png" data-desc="Gon Freecss becomes a Hunter to find his father and embarks on epic adventures.">
+                                        <div class="premium-anime-img" style="background-image:url('https://i.pinimg.com/736x/f6/68/a3/f668a3141dc9ccd4afb7e4545ca1cf6b.jpg');"></div>
+                                        <div class="premium-anime-info">
+                                                <h2>Hunter x Hunter</h2>
+                                                <button class="premium-view-btn">View Details</button>
+                                        </div>
+                                </div></div>
+                                <div class="neon-box"><div class="premium-anime-card" data-title="Black Clover" data-img="https://static.wikia.nocookie.net/blackclover/images/7/7e/Asta_Anime.png" data-desc="Asta, born without magic, strives to become the Wizard King in a world of magic.">
+                                        <div class="premium-anime-img" style="background-image:url('https://i.pinimg.com/736x/27/dd/a6/27dda6bb9b3f27ebf2ee9bd5dd9ac6cd.jpg');"></div>
+                                        <div class="premium-anime-info">
+                                                <h2>Black Clover</h2>
+                                                <button class="premium-view-btn">View Details</button>
+                                        </div>
+                                </div></div>
+                                <div class="neon-box"><div class="premium-anime-card" data-title="Naruto" data-img="https://static.wikia.nocookie.net/naruto/images/9/97/Naruto_Uzumaki_Part_II.png" data-desc="The story of Naruto Uzumaki, a ninja who seeks recognition and dreams of becoming the Hokage.">
+                                        <div class="premium-anime-img" style="background-image:url('https://i.pinimg.com/736x/87/4b/79/874b797fd7dffe8bbac1a46e05a8eb45.jpg');"></div>
+                                        <div class="premium-anime-info">
+                                                <h2>Naruto</h2>
+                                                <button class="premium-view-btn">View Details</button>
+                                        </div>
+                                </div></div>
+                                <div class="neon-box"><div class="premium-anime-card" data-title="Attack on Titan" data-img="https://static.wikia.nocookie.net/shingekinokyojin/images/9/9a/Eren_Jaeger_anime.png" data-desc="Humanity fights for survival against giant humanoid Titans in a post-apocalyptic world.">
+                                        <div class="premium-anime-img" style="background-image:url('https://i.pinimg.com/736x/0b/e0/5c/0be05c856253ead714d6d9c4ba57e392.jpg');"></div>
+                                        <div class="premium-anime-info">
+                                                <h2>Attack on Titan</h2>
+                                                <button class="premium-view-btn">View Details</button>
+                                        </div>
+                                </div></div>
+                                <div class="neon-box"><div class="premium-anime-card" data-title="My Hero Academia" data-img="https://static.wikia.nocookie.net/bokunoheroacademia/images/9/9d/Izuku_Midoriya_Full_Body_Hero_Costume.png" data-desc="Follow Izuku Midoriya as he trains to become a superhero in a world full of superpowers.">
+                                        <div class="premium-anime-img" style="background-image:url('https://i.pinimg.com/736x/94/ea/f3/94eaf36ebaef4a16cc0931b1dcdf2f27.jpg');"></div>
+                                        <div class="premium-anime-info">
+                                                <h2>My Hero Academia</h2>
+                                                <button class="premium-view-btn">View Details</button>
+                                        </div>
+                                </div></div>
+                                <div class="neon-box"><div class="premium-anime-card" data-title="One Piece" data-img="https://static.wikia.nocookie.net/onepiece/images/2/2e/Monkey_D._Luffy_Anime_Pre_Timeskip_Infobox.png" data-desc="Join Luffy and his crew on their adventure to find the legendary One Piece treasure.">
+                                        <div class="premium-anime-img" style="background-image:url('https://i.pinimg.com/736x/a8/39/91/a83991a3a3c871fe3fb907e9e17e3033.jpg');"></div>
+                                        <div class="premium-anime-info">
+                                                <h2>One Piece</h2>
+                                                <button class="premium-view-btn">View Details</button>
+                                        </div>
+                                </div></div>
+                        </div>
+                        <div id="premium-anime-details" class="premium-anime-details" style="display:none;">
+                                <button id="premium-back-btn" class="premium-back-btn">Back to Gallery</button>
+                                <h2 class="premium-details-title"></h2>
+                                <p class="premium-details-desc"></p>
+                                <a href="https://hianime.to/" target="_blank" rel="noopener" id="watch-anime-btn" class="watch-anime-btn">Watch Anime</a>
+                        <div id="watch-anime-section" class="watch-anime-section" style="display:none;">
+                                <button id="watch-back-btn" class="premium-back-btn">Back to Details</button>
+                                <h2 class="watch-title">Watch Anime Online</h2>
+                                <div class="watch-links">
+                                        <a href="https://www.crunchyroll.com/" target="_blank" class="watch-link crunchyroll">Crunchyroll</a>
+                                        <a href="https://hianime.to/" target="_blank" class="watch-link hianime">HiAnime</a>
+                                </div>
+                        </div>
+                                <p class="premium-details-desc2"></p>
+                        </div>
+                        <script>
+                                // Watch Anime button now directly links to HiAnime
+                                // Premium gallery logic
+                                                        function bindPremiumViewBtns() {
+                                                                        document.querySelectorAll('.premium-view-btn').forEach(btn => {
+                                                                                btn.onclick = function(e) {
+                                                                                        const card = btn.closest('.premium-anime-card');
+                                                                                        document.querySelector('.premium-anime-gallery').style.display = 'none';
+                                                                                        document.getElementById('premium-anime-details').style.display = 'flex';
+                                                                                        document.querySelector('.premium-details-title').textContent = card.getAttribute('data-title');
+                                                                                        document.querySelector('.premium-details-desc').textContent = card.getAttribute('data-desc');
+                                                                                        // Add more detailed description for each anime
+                                                                                        let moreDesc = '';
+                                                                                                        switch(card.getAttribute('data-title')) {
+                                                                                                                case 'Demon Slayer':
+                                                                                                                        moreDesc = 'Demon Slayer is a masterpiece that blends emotion, beauty, and action into one unforgettable story. It follows Tanjiro Kamado, a kind-hearted boy whose family is slaughtered by demons, leaving his sister Nezuko cursed between human and demon. With breathtaking animation and soul-stirring music, the anime shows Tanjiro’s journey of pain, love, and courage as he fights to save his sister and destroy evil. Every battle feels like poetry in motion, and every tear reminds us of the power of hope, family, and determination.';
+                                                                                                                        break;
+                                                                                                                case 'Jujutsu Kaisen':
+                                                                                                                        moreDesc = 'Jujutsu Kaisen is a thrilling blend of dark fantasy and raw emotion, where curses born from human fear threaten the world. The story follows Yuji Itadori, a boy with a kind heart who becomes the host of a powerful curse after swallowing a deadly object. What follows is a journey of strength, sacrifice, and the fight between good and evil. With jaw-dropping animation, deep characters, and emotional battles, Jujutsu Kaisen shows how even in the darkest moments, courage and friendship can light the way.';
+                                                                                                                        break;
+                                                                                                                case 'Death Note':
+                                                                                                                        moreDesc = 'Death Note is a brilliant psychological masterpiece that explores the power of the mind and the darkness within the human heart. It tells the story of Light Yagami, a genius student who finds a mysterious notebook that can kill anyone whose name is written in it. What begins as a quest for justice slowly turns into a dangerous game of pride and obsession, as Light faces the equally brilliant detective, L. With intense mind battles, deep moral questions, and a story that keeps you on edge, Death Note shows how power can change a person—and how even the purest intentions can lead to chaos.';
+                                                                                                                        break;
+                                                                                                                case 'Dragon Ball Z':
+                                                                                                                        moreDesc = 'Dragon Ball Z is a legendary shonen anime, famous for its epic battles, transformations, and the enduring rivalry between Goku and Vegeta.';
+                                                                                                                        break;
+                                                                                                                case 'Fullmetal Alchemist: Brotherhood':
+                                                                                                                        moreDesc = 'This anime is celebrated for its deep story, world-building, and themes of sacrifice, brotherhood, and the law of equivalent exchange.';
+                                                                                                                        break;
+                                                                                                                case 'Tokyo Ghoul':
+                                                                                                                        moreDesc = 'Tokyo Ghoul delves into the struggles of identity and survival in a world where ghouls and humans are at odds, with dark, gothic visuals and intense action.';
+                                                                                                                        break;
+                                                                                                                case 'Sword Art Online':
+                                                                                                                        moreDesc = 'Sword Art Online is a breathtaking journey where thousands of players are trapped inside a virtual reality game — and the only way to escape is to clear all its deadly levels. Blending love, courage, and survival, it follows Kirito, a lone swordsman who battles monsters and fate itself to protect those he loves in a world where “game over” means death in real life.';
+                                                                                                                        break;
+                                                                                                case 'Bleach':
+                                                                                                        moreDesc = 'Bleach features soul reapers, spirits, and a vast array of unique abilities, with Ichigo Kurosaki at the center of supernatural conflicts.';
+                                                                                                        break;
+                                                                                                case 'One Punch Man':
+                                                                                                        moreDesc = 'A parody of superhero tropes, One Punch Man follows Saitama, a hero bored by his own overwhelming strength, in a world full of bizarre monsters and heroes.';
+                                                                                                        break;
+                                                                                                case 'Hunter x Hunter':
+                                                                                                        moreDesc = 'Hunter x Hunter is renowned for its strategic battles, complex characters, and the journey of Gon and Killua through the world of Hunters.';
+                                                                                                        break;
+                                                                                                case 'Black Clover':
+                                                                                                        moreDesc = 'Black Clover is a story of perseverance and rivalry, as Asta and Yuno strive to become the Wizard King in a magical kingdom.';
+                                                                                                        break;
+                                                                                                case 'Naruto':
+                                                                                                        moreDesc = 'Naruto is a coming-of-age tale filled with ninja action, heartfelt friendships, and the pursuit of dreams, set in a richly developed world.';
+                                                                                                        break;
+                                                                                                case 'Attack on Titan':
+                                                                                                        moreDesc = 'Attack on Titan is a dark fantasy epic, known for its intense action, political intrigue, and the mystery of the Titans.';
+                                                                                                        break;
+                                                                                                case 'My Hero Academia':
+                                                                                                        moreDesc = 'My Hero Academia is a superhero saga where students train to become pro heroes, featuring creative powers and inspiring themes of courage.';
+                                                                                                        break;
+                                                                                                case 'One Piece':
+                                                                                                        moreDesc = 'One Piece is a grand adventure about pirates, friendship, and the search for the ultimate treasure, with a vast world and unforgettable characters.';
+                                                                                                        break;
+                                                                                                default:
+                                                                                                        moreDesc = '';
+                                                                                        }
+                                                                                        document.querySelector('.premium-details-desc2').textContent = moreDesc;
+                                                                                        // Always set Watch Anime button to HiAnime homepage
+                                                                                        document.getElementById('watch-anime-btn').href = 'https://hianime.to/';
+                                                                                };
+                                                                        });
+                                                        }
+                                                        bindPremiumViewBtns();
+                                                        document.getElementById('premium-back-btn').onclick = function() {
+                                                                document.getElementById('premium-anime-details').style.display = 'none';
+                                                                document.querySelector('.premium-anime-gallery').style.display = 'flex';
+                                                                bindPremiumViewBtns();
+                                                        };
+                        </script>
+                                                                                <!-- Premium vertical gallery will be added here -->
+        </div>
+        <script>
+                                                                                // Premium intro logic with smooth animation
+                                                                                document.getElementById('enter-btn').onclick = function() {
+                                                                                                const intro = document.getElementById('intro-premium');
+                                                                                                intro.classList.add('hide');
+                                                                                                // Show time travel overlay
+                                                                                                const tt = document.getElementById('timetravel-overlay');
+                                                                                                tt.style.display = 'block';
+                                                                                                tt.innerHTML = '<canvas id="timetravel-canvas" style="width:100vw;height:100vh;display:block;"></canvas>';
+                                                                                                setTimeout(function() {
+                                                                                                        // Animate time travel effect for 1.6s
+                                                                                                        const canvas = document.getElementById('timetravel-canvas');
+                                                                                                        const ctx = canvas.getContext('2d');
+                                                                                                        function resize() {
+                                                                                                                canvas.width = window.innerWidth;
+                                                                                                                canvas.height = window.innerHeight;
+                                                                                                        }
+                                                                                                        resize();
+                                                                                                        window.addEventListener('resize', resize);
+                                                                                                        // Swirl and star particles
+                                                                                                        let t = 0;
+                                                                                                        let stars = Array.from({length: 80}, () => ({
+                                                                                                                r: 0.5 + Math.random()*1.5,
+                                                                                                                a: Math.random()*2*Math.PI,
+                                                                                                                d: 60 + Math.random()*Math.min(window.innerWidth,window.innerHeight)/2,
+                                                                                                                s: 0.5+Math.random()*1.5
+                                                                                                        }));
+                                                                                                        function draw() {
+                                                                                                                ctx.clearRect(0,0,canvas.width,canvas.height);
+                                                                                                                // Swirling gradient
+                                                                                                                let grad = ctx.createRadialGradient(canvas.width/2,canvas.height/2,0,canvas.width/2,canvas.height/2,canvas.width/1.2);
+                                                                                                                grad.addColorStop(0,'#fff');
+                                                                                                                grad.addColorStop(0.2,'#00fff0');
+                                                                                                                grad.addColorStop(0.5,'#ff69b4');
+                                                                                                                grad.addColorStop(0.8,'#23243a');
+                                                                                                                grad.addColorStop(1,'#18181f');
+                                                                                                                ctx.fillStyle = grad;
+                                                                                                                ctx.save();
+                                                                                                                ctx.translate(canvas.width/2,canvas.height/2);
+                                                                                                                ctx.rotate(t/18);
+                                                                                                                ctx.translate(-canvas.width/2,-canvas.height/2);
+                                                                                                                ctx.fillRect(0,0,canvas.width,canvas.height);
+                                                                                                                ctx.restore();
+                                                                                                                // Stars
+                                                                                                                for(let s of stars){
+                                                                                                                        let x = canvas.width/2 + Math.cos(s.a + t*s.s/32)*s.d;
+                                                                                                                        let y = canvas.height/2 + Math.sin(s.a + t*s.s/32)*s.d;
+                                                                                                                        ctx.beginPath();
+                                                                                                                        ctx.arc(x,y,s.r,0,2*Math.PI);
+                                                                                                                        ctx.fillStyle = 'rgba(255,255,255,0.8)';
+                                                                                                                        ctx.shadowColor = '#fff';
+                                                                                                                        ctx.shadowBlur = 8;
+                                                                                                                        ctx.fill();
+                                                                                                                }
+                                                                                                                t += 1.5;
+                                                                                                                if (t < 48) requestAnimationFrame(draw);
+                                                                                                        }
+                                                                                                        draw();
+                                                                                                }, 10);
+                                                                                                setTimeout(function() {
+                                                                                                        tt.style.display = 'none';
+                                                                                                        intro.style.display = 'none';
+                                                                                                        document.getElementById('main-content').style.display = '';
+                                                                                                    }, 1700);
+        <style>
+        /* Smoother transitions for all major elements */
+        .premium-anime-gallery, .premium-anime-card, .neon-box, .gallery-bg-text, .premium-anime-details, .premium-gallery-header, .premium-gallery-title, .premium-gallery-desc, .premium-view-btn, .premium-back-btn, .watch-anime-section, .watch-link, .intro-premium-card, .intro-premium-title, .intro-premium-desc, .premium-btn {
+                transition: all 0.7s cubic-bezier(.68,-0.55,.27,1.55) !important;
+        }
+        /* Time travel overlay always on top */
+        #timetravel-overlay {
+                position: fixed;
+                top: 0; left: 0; right: 0; bottom: 0;
+                width: 100vw; height: 100vh;
+                z-index: 9999;
+                background: transparent;
+                pointer-events: none;
+        }
+        </style>
+                                                                                };
+                                // Main content logic with animated transitions
+                                document.querySelectorAll('.anime-card').forEach(card => {
+                                        card.addEventListener('click', function() {
+                                                card.classList.remove('clicked');
+                                                void card.offsetWidth;
+                                                card.classList.add('clicked');
+                                                // Animate gallery out
+                                                const gallery = document.querySelector('.anime-gallery');
+                                                gallery.style.animation = 'fadeOutGallery 0.5s cubic-bezier(.68,-0.55,.27,1.55) forwards';
+                                                setTimeout(function() {
+                                                        gallery.style.display = 'none';
+                                                        // Show details section with animation
+                                                        const details = document.getElementById('anime-details');
+                                                        details.style.display = 'block';
+                                                        details.classList.remove('fadeOutDetails');
+                                                        details.classList.add('animated-details');
+                                                        document.getElementById('details-title').textContent = card.getAttribute('data-title');
+                                                        document.getElementById('details-img').src = card.getAttribute('data-img');
+                                                        document.getElementById('details-img').alt = card.getAttribute('data-title');
+                                                        document.getElementById('details-desc').textContent = card.getAttribute('data-desc');
+                                                }, 450);
+                                        });
+                                        card.addEventListener('animationend', function() {
+                                                card.classList.remove('clicked');
+                                        });
+                                });
+                                document.getElementById('back-btn').onclick = function() {
+                                        const details = document.getElementById('anime-details');
+                                        details.classList.remove('animated-details');
+                                        details.classList.add('fadeOutDetails');
+                                        setTimeout(function() {
+                                                details.style.display = 'none';
+                                                const gallery = document.querySelector('.anime-gallery');
+                                                gallery.style.display = 'flex';
+                                                gallery.style.animation = 'fadeInGallery 0.7s cubic-bezier(.68,-0.55,.27,1.55)';
+                                        }, 400);
+                                };
+                                // Add fadeOut keyframes dynamically
+                                const style = document.createElement('style');
+                                style.innerHTML = `
+                                        @keyframes fadeOutGallery {
+                                                0% { opacity: 1; transform: translateY(0) scale(1); }
+                                                100% { opacity: 0; transform: translateY(40px) scale(0.98); }
+                                        }
+                                        .fadeOutDetails {
+                                                animation: fadeOutDetails 0.4s cubic-bezier(.68,-0.55,.27,1.55) forwards;
+                                        }
+                                        @keyframes fadeOutDetails {
+                                                0% { opacity: 1; transform: scale(1) translateY(0); }
+                                                100% { opacity: 0; transform: scale(0.95) translateY(40px); }
+                                        }
+                                `;
+                                document.head.appendChild(style);
+        </script>
+</body>
+</html>

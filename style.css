@@ -1,0 +1,834 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body, .premium-anime-gallery, .premium-anime-card, .neon-box, .gallery-bg-text, .premium-anime-details, .premium-gallery-header, .premium-gallery-title, .premium-gallery-desc, .premium-view-btn, .premium-back-btn, .watch-anime-section, .watch-link, .intro-premium-card, .intro-premium-title, .intro-premium-desc, .premium-btn {
+    transition: all 0.85s cubic-bezier(.77,0,.18,1) !important;
+}
+
+/* Smoother hover/focus/active effects for all interactive elements */
+.premium-view-btn, .premium-back-btn, .watch-anime-btn, .watch-link, .premium-btn, .enter-btn {
+    outline: none;
+    box-shadow: 0 0 0 0 rgba(0,255,240,0);
+    transition: box-shadow 0.5s cubic-bezier(.77,0,.18,1), transform 0.5s cubic-bezier(.77,0,.18,1), background 0.5s cubic-bezier(.77,0,.18,1);
+}
+.premium-view-btn:hover, .premium-back-btn:hover, .watch-anime-btn:hover, .watch-link:hover, .premium-btn:hover, .enter-btn:hover {
+    transform: scale(1.08) translateY(-2px);
+    box-shadow: 0 8px 32px #00fff099, 0 2px 12px #ff69b499;
+    filter: brightness(1.08) saturate(1.1);
+}
+.premium-view-btn:focus, .premium-back-btn:focus, .watch-anime-btn:focus, .watch-link:focus, .premium-btn:focus, .enter-btn:focus {
+    box-shadow: 0 0 0 4px #00fff099, 0 2px 12px #ff69b499;
+}
+
+/* Smoother overlay/modal/card transitions */
+#timetravel-overlay, .intro-premium-bg, #main-content, .premium-anime-details, .watch-anime-section {
+    transition: opacity 0.85s cubic-bezier(.77,0,.18,1), filter 0.85s cubic-bezier(.77,0,.18,1), transform 0.85s cubic-bezier(.77,0,.18,1);
+}
+
+/* Subtle fade/scale for overlays and modals */
+.intro-premium-bg.hide, #timetravel-overlay.hide, .premium-anime-details.hide, .watch-anime-section.hide {
+    opacity: 0 !important;
+    pointer-events: none;
+    filter: blur(8px) brightness(0.8);
+    transform: scale(1.04) translateY(40px);
+}
+
+/* Responsive improvements */
+@media (max-width: 700px) {
+    .premium-anime-gallery, .premium-anime-card, .neon-box, .intro-premium-card {
+        padding: 12px !important;
+        max-width: 98vw !important;
+        min-width: 0 !important;
+    }
+    .premium-anime-img {
+        width: 60px !important;
+        height: 60px !important;
+    }
+    .gallery-bg-text {
+        font-size: 8vw !important;
+    }
+}
+
+/* Remove tap highlight on mobile */
+body {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Focus ring for accessibility */
+:focus-visible {
+    outline: 2.5px solid #00fff0 !important;
+    outline-offset: 2px;
+}
+/* Coolest background text for Anime Gallery */
+.gallery-bg-text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1.1);
+    font-family: 'Luckiest Guy', 'Orbitron', 'Bebas Neue', cursive, 'Segoe UI', Arial, sans-serif;
+    font-size: 5vw;
+    color: #fff;
+    opacity: 0.09;
+    letter-spacing: 0.18em;
+    text-shadow: 0 0 32px #00fff0, 0 0 64px #ff00ea, 0 0 8px #fff, 0 0 2px #ff69b4;
+    pointer-events: none;
+    user-select: none;
+    z-index: 0;
+    animation: bgTextPulse 4s cubic-bezier(.68,-0.55,.27,1.55) infinite alternate;
+    white-space: nowrap;
+}
+.gallery-bg-text .love-word {
+    font-family: 'Bebas Neue', 'Orbitron', 'Luckiest Guy', cursive, 'Segoe UI', Arial, sans-serif;
+    color: #00fff0;
+    text-shadow: 0 0 24px #00fff0, 0 0 32px #ff00ea, 0 0 8px #fff;
+    font-size: 1.2em;
+    letter-spacing: 0.22em;
+    animation: loveGlow 2.2s infinite alternate;
+    display: inline-block;
+}
+@keyframes bgTextPulse {
+    0% { opacity: 0.09; filter: blur(0.5px); }
+    100% { opacity: 0.17; filter: blur(2px); }
+}
+@keyframes loveGlow {
+    0% { text-shadow: 0 0 24px #00fff0, 0 0 32px #ff00ea, 0 0 8px #fff; }
+    100% { text-shadow: 0 0 48px #ff00ea, 0 0 64px #00fff0, 0 0 16px #fff; }
+}
+.premium-anime-gallery {
+    position: relative;
+    overflow: visible;
+    min-height: 100vh;
+    width: 100vw;
+    padding: 64px 0 80px 0;
+    background: linear-gradient(135deg, #18181f 0%, #23243a 100%) fixed;
+    z-index: 1;
+}
+
+.premium-anime-gallery::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: linear-gradient(120deg, #23243a 0%, #18181f 100%);
+    opacity: 0.82;
+    filter: blur(18px) saturate(1.1);
+    pointer-events: none;
+    border-radius: 0 0 60px 60px;
+    box-shadow: 0 0 120px 0 #23243a88, 0 0 220px 0 #18181f55 inset;
+    animation: glassBgFloat 12s ease-in-out infinite alternate;
+}
+
+@keyframes glassBgFloat {
+    0% { opacity: 0.55; filter: blur(12px) saturate(1.2); }
+    50% { opacity: 0.7; filter: blur(18px) saturate(1.4); }
+    100% { opacity: 0.55; filter: blur(12px) saturate(1.2); }
+/* removed stray closing brace */
+}
+
+/* Neon Box for Anime Cards - Premium, Smooth, Centered */
+.neon-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 340px;
+    max-width: 520px;
+    width: 100%;
+    min-height: 160px;
+    margin: 0 0 36px 0;
+    border-radius: 32px;
+    background: rgba(24,24,31,0.72);
+    box-shadow: 0 0 32px #23243a, 0 0 48px #18181f, 0 0 64px #23243a;
+    border: 3.5px solid rgba(40,40,60,0.38);
+    border-image: none;
+    animation: neonBoxGlow 2.8s cubic-bezier(.68,-0.55,.27,1.55) infinite alternate;
+    position: relative;
+    z-index: 1;
+    transition: box-shadow 0.8s cubic-bezier(.68,-0.55,.27,1.55), background 0.8s cubic-bezier(.68,-0.55,.27,1.55), border 0.8s cubic-bezier(.68,-0.55,.27,1.55);
+    backdrop-filter: blur(10px) saturate(1.3);
+    overflow: visible;
+}
+
+.premium-anime-card {
+    display: flex;
+    align-items: center;
+    background: rgba(255,255,255,0.18);
+    border-radius: 24px;
+    box-shadow: 0 8px 40px #ff69b4cc, 0 2px 12px #fff5, 0 0 32px #00fff0cc;
+    padding: 22px 32px;
+    width: 100%;
+    max-width: 440px;
+    min-height: 130px;
+    transition: transform 0.5s cubic-bezier(.68,-0.55,.27,1.55), box-shadow 0.5s cubic-bezier(.68,-0.55,.27,1.55), background 0.5s cubic-bezier(.68,-0.55,.27,1.55);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(12px) saturate(1.3);
+    border: 2px solid rgba(255,255,255,0.22);
+    z-index: 2;
+}
+.premium-anime-card:hover {
+    transform: scale(1.045) translateY(-4px) rotate(-1deg);
+    box-shadow: 0 16px 60px #ff69b4ee, 0 4px 24px #00fff0cc, 0 0 48px #ff00ea99;
+    background: rgba(255,255,255,0.24);
+}
+.premium-anime-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.premium-view-btn {
+    font-size: 1.05rem;
+    padding: 8px 22px;
+    border-radius: 8px;
+    border: none;
+    background: linear-gradient(90deg, #ff69b4 0%, #fcb69f 100%);
+    color: #fff;
+    font-family: 'Luckiest Guy', cursive, sans-serif;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 12px #ffb34755;
+    cursor: pointer;
+    transition: transform 0.4s cubic-bezier(.68,-0.55,.27,1.55), box-shadow 0.4s cubic-bezier(.68,-0.55,.27,1.55), background 0.4s cubic-bezier(.68,-0.55,.27,1.55);
+    outline: none;
+    margin: 0 auto;
+    display: block;
+}
+.premium-view-btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 4px 18px #ff69b4aa;
+    background: linear-gradient(90deg, #fcb69f 0%, #ff69b4 100%);
+}
+@keyframes neonBoxGlow {
+    0% { box-shadow: 0 0 18px #00fff0, 0 0 24px #ff00ea, 0 0 32px #00fff0; }
+    100% { box-shadow: 0 0 32px #ff00ea, 0 0 40px #00fff0, 0 0 48px #ff00ea; }
+}
+/* Neon Box for Anime Cards */
+.neon-box {
+    padding: 0.5em 0.5em 0.5em 0.5em;
+    margin: 0 0 18px 0;
+    border-radius: 28px;
+    background: rgba(30,30,40,0.18);
+    box-shadow: 0 0 18px #00fff0, 0 0 24px #ff00ea, 0 0 32px #00fff0;
+    border: 2.5px solid transparent;
+    border-image: linear-gradient(90deg, #00fff0, #ff00ea, #00fff0) 1;
+    animation: neonBoxGlow 2.2s linear infinite alternate;
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes neonBoxGlow {
+    0% { box-shadow: 0 0 18px #00fff0, 0 0 24px #ff00ea, 0 0 32px #00fff0; }
+    100% { box-shadow: 0 0 32px #ff00ea, 0 0 40px #00fff0, 0 0 48px #ff00ea; }
+}
+/* Neon Divider for Anime Gallery */
+.neon-divider {
+    width: 80%;
+    height: 3px;
+    margin: 18px auto 0 auto;
+    border-radius: 2px;
+    background: linear-gradient(90deg, #00fff0, #ff00ea, #00fff0);
+    box-shadow: 0 0 12px #00fff0, 0 0 18px #ff00ea;
+    opacity: 0.85;
+    animation: neonGlow 2s linear infinite alternate;
+}
+
+@keyframes neonGlow {
+    0% { box-shadow: 0 0 12px #00fff0, 0 0 18px #ff00ea; }
+    100% { box-shadow: 0 0 24px #ff00ea, 0 0 32px #00fff0; }
+}
+/* Watch Anime Section Styles */
+.watch-anime-btn {
+    margin-top: 18px;
+    font-size: 1.1rem;
+    padding: 10px 32px;
+    border-radius: 24px;
+    border: none;
+    background: linear-gradient(90deg, #ff69b4 0%, #fcb69f 100%);
+    color: #fff;
+    font-family: 'Luckiest Guy', cursive, sans-serif;
+    letter-spacing: 1.5px;
+    box-shadow: 0 2px 12px #ffb34755;
+    cursor: pointer;
+    transition: transform 0.18s, box-shadow 0.18s, background 0.18s;
+    outline: none;
+    font-weight: 600;
+    z-index: 2;
+}
+.watch-hianime-animated {
+    display: inline-block;
+    background: linear-gradient(90deg, #6a82fb 0%, #fc5c7d 100%);
+    color: #fff;
+    animation: hianimePulse 1.2s infinite alternate;
+    text-decoration: none;
+}
+.watch-hianime-animated:hover {
+    transform: scale(1.08) rotate(-1deg);
+    box-shadow: 0 4px 18px #6a82fb99, 0 0 18px #fc5c7d99;
+    background: linear-gradient(90deg, #fc5c7d 0%, #6a82fb 100%);
+    filter: brightness(1.08);
+}
+@keyframes hianimePulse {
+    0% { box-shadow: 0 2px 12px #6a82fb55; }
+    100% { box-shadow: 0 8px 32px #fc5c7d88; }
+}
+.watch-anime-btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 4px 18px #ff69b4aa;
+    background: linear-gradient(90deg, #fcb69f 0%, #ff69b4 100%);
+}
+.watch-anime-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.22);
+    border-radius: 32px;
+    box-shadow: 0 8px 40px 0 #ff69b455, 0 2px 12px #fff3;
+    padding: 48px 32px 36px 32px;
+    max-width: 420px;
+    margin: 56px auto 0 auto;
+    min-height: 320px;
+    z-index: 3;
+    animation: fadeInDetails 0.7s cubic-bezier(.68,-0.55,.27,1.55);
+    border: none;
+    position: relative;
+    overflow: visible;
+}
+.watch-title {
+    font-family: 'Luckiest Guy', cursive, sans-serif;
+    font-size: 2rem;
+    color: #ff69b4;
+    letter-spacing: 2px;
+    margin: 0 0 24px 0;
+    text-shadow: 0 2px 12px #fff, 0 0 18px #ffb347;
+    z-index: 1;
+}
+.watch-links {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    width: 100%;
+    align-items: center;
+    margin-top: 12px;
+}
+.watch-link {
+    display: block;
+    width: 220px;
+    padding: 14px 0;
+    border-radius: 18px;
+    font-size: 1.15rem;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background: linear-gradient(90deg, #ff69b4 0%, #fcb69f 100%);
+    box-shadow: 0 2px 12px #ffb34755;
+    letter-spacing: 1px;
+    transition: transform 0.18s, box-shadow 0.18s, background 0.18s;
+    outline: none;
+    border: none;
+}
+.watch-link.crunchyroll {
+    background: linear-gradient(90deg, #fcb900 0%, #ff8000 100%);
+    color: #23243a;
+}
+.watch-link.hianime {
+    background: linear-gradient(90deg, #6a82fb 0%, #fc5c7d 100%);
+    color: #fff;
+}
+.watch-link:hover {
+    transform: scale(1.06);
+    box-shadow: 0 4px 18px #ff69b4aa;
+    filter: brightness(1.08);
+}
+/* Premium Vertical Gallery Styles */
+.premium-gallery-header {
+    text-align: center;
+    margin-top: 36px;
+    margin-bottom: 24px;
+}
+.premium-gallery-title {
+    font-family: 'Luckiest Guy', cursive, sans-serif;
+    font-size: 2.7rem;
+    color: #fff;
+    letter-spacing: 4px;
+    text-shadow: 0 2px 16px #ff69b4, 0 0 18px #fff;
+}
+.premium-gallery-desc {
+    color: #ffe4e1;
+    font-size: 1.15rem;
+    margin-bottom: 0.5em;
+}
+.premium-anime-gallery {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 38px;
+        margin: 0 auto 48px auto;
+        max-width: 480px;
+        width: 100%;
+        z-index: 2;
+    background: rgba(255,255,255,0.13);
+    /* static background restored */
+}
+.premium-anime-card {
+    display: flex;
+    align-items: center;
+    background: rgba(255,255,255,0.13);
+    border-radius: 24px;
+    box-shadow: 0 4px 32px #ff69b4aa, 0 2px 12px #fff3;
+    padding: 18px 24px;
+    width: 100%;
+    max-width: 420px;
+    min-height: 120px;
+    transition: transform 0.18s, box-shadow 0.18s, background 0.18s;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(8px) saturate(1.2);
+    border: 1.5px solid rgba(255,255,255,0.18);
+}
+.premium-anime-card:hover {
+    transform: scale(1.03) translateY(-2px);
+    box-shadow: 0 8px 40px #ff69b4cc, 0 2px 12px #fff5;
+    background: rgba(255,255,255,0.18);
+}
+.premium-anime-img {
+    width: 90px;
+    height: 90px;
+    border-radius: 16px;
+    background-size: cover;
+    background-position: center;
+    margin-right: 28px;
+    box-shadow: 0 2px 16px #ffb34755;
+    border: 2.5px solid #fff;
+}
+.premium-anime-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+.premium-anime-info h2 {
+    font-size: 1.35rem;
+    color: #ff69b4;
+    font-family: 'Luckiest Guy', cursive, sans-serif;
+    margin: 0 0 8px 0;
+    letter-spacing: 1.5px;
+}
+.premium-view-btn {
+    font-size: 1.05rem;
+    padding: 8px 22px;
+    border-radius: 8px;
+    border: none;
+    background: linear-gradient(90deg, #ff69b4 0%, #fcb69f 100%);
+    color: #fff;
+    font-family: 'Luckiest Guy', cursive, sans-serif;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 12px #ffb34755;
+    cursor: pointer;
+    transition: transform 0.18s, box-shadow 0.18s, background 0.18s;
+    outline: none;
+}
+.premium-view-btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 4px 18px #ff69b4aa;
+    background: linear-gradient(90deg, #fcb69f 0%, #ff69b4 100%);
+}
+.premium-anime-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.22);
+    border-radius: 32px;
+    box-shadow: 0 8px 40px 0 #ff69b455, 0 2px 12px #fff3;
+    padding: 48px 32px 36px 32px;
+    max-width: 420px;
+    margin: 56px auto 0 auto;
+    min-height: 320px;
+    z-index: 3;
+    animation: fadeInDetails 0.7s cubic-bezier(.68,-0.55,.27,1.55);
+    border: none;
+    position: relative;
+    overflow: visible;
+}
+.premium-anime-details::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 36px;
+    background: linear-gradient(120deg, #ff69b4 0%, #fcb69f 100%);
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.18;
+}
+.premium-back-btn {
+    align-self: flex-end;
+    font-size: 1rem;
+    padding: 7px 22px;
+    border-radius: 24px;
+    border: 1.5px solid #ff69b4;
+    background: rgba(255,255,255,0.18);
+    color: #ff69b4;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-weight: 600;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 12px #ffb34733;
+    cursor: pointer;
+    transition: transform 0.18s, box-shadow 0.18s, background 0.18s, color 0.18s, border 0.18s;
+    outline: none;
+    margin-bottom: 18px;
+    position: relative;
+    z-index: 2;
+}
+.premium-back-btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 4px 18px #ff69b4aa;
+    background: #fff;
+    color: #ff69b4;
+    border: 1.5px solid #fcb69f;
+}
+.premium-anime-details h2.premium-details-title {
+    font-family: 'Luckiest Guy', cursive, sans-serif;
+    font-size: 2.1rem;
+    color: #ff69b4;
+    letter-spacing: 2.5px;
+    margin: 0 0 18px 0;
+    text-shadow: 0 2px 12px #fff, 0 0 18px #ffb347;
+    z-index: 1;
+}
+.premium-anime-details p.premium-details-desc {
+    font-size: 1.18rem;
+    color: #23243a;
+    margin: 0 0 18px 0;
+    text-align: center;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    z-index: 1;
+}
+.premium-details-img {
+    width: 180px;
+    height: 240px;
+    border-radius: 18px;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 16px #ffb34755;
+    border: 2.5px solid #fff;
+}
+.premium-details-title {
+    font-size: 1.7rem;
+    color: #ff69b4;
+    font-family: 'Luckiest Guy', cursive, sans-serif;
+    margin: 0 0 12px 0;
+    letter-spacing: 2px;
+}
+.premium-details-desc {
+    font-size: 1.13rem;
+    color: #333;
+    margin: 0 0 18px 0;
+    text-align: center;
+}
+.premium-back-btn {
+    align-self: flex-end;
+    font-size: 1rem;
+    padding: 7px 18px;
+    border-radius: 8px;
+    border: none;
+    background: linear-gradient(90deg, #ff69b4 0%, #fcb69f 100%);
+    color: #fff;
+    font-family: 'Luckiest Guy', cursive, sans-serif;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 12px #ffb34755;
+    cursor: pointer;
+    transition: transform 0.18s, box-shadow 0.18s, background 0.18s;
+    outline: none;
+    margin-bottom: 18px;
+}
+.premium-back-btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 4px 18px #ff69b4aa;
+    background: linear-gradient(90deg, #fcb69f 0%, #ff69b4 100%);
+}
+/* Gallery Header */
+.gallery-header {
+    text-align: center;
+    margin-top: 32px;
+    margin-bottom: 12px;
+}
+.gallery-title {
+    font-family: 'Luckiest Guy', cursive, sans-serif;
+    font-size: 2.8rem;
+    color: #ff69b4;
+    letter-spacing: 3px;
+    margin-bottom: 0.2em;
+    text-shadow: 0 2px 12px #fff, 0 0 18px #ffb347;
+}
+.gallery-desc {
+    color: #ffe4e1;
+    font-size: 1.1rem;
+    margin-bottom: 0.5em;
+}
+
+/* Animated Gallery */
+.animated-gallery {
+    animation: fadeInGallery 0.8s cubic-bezier(.68,-0.55,.27,1.55);
+}
+@keyframes fadeInGallery {
+    0% { opacity: 0; transform: translateY(40px) scale(0.98); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+.animated-card {
+    opacity: 0;
+    transform: translateY(40px) scale(0.98);
+    animation: cardAppear 0.7s cubic-bezier(.68,-0.55,.27,1.55) forwards;
+}
+.animated-card:nth-child(1) { animation-delay: 0.1s; }
+
+
+/* Animated Details Section */
+.animated-details {
+    animation: fadeInDetails 0.7s cubic-bezier(.68,-0.55,.27,1.55);
+}
+@keyframes fadeInDetails {
+    0% { opacity: 0; transform: scale(0.95) translateY(40px); }
+    100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    min-height: 100vh;
+}
+
+.black-premium-theme {
+    background: linear-gradient(135deg, #18181f 0%, #23243a 100%) fixed !important;
+    background-size: cover !important;
+    animation: none !important;
+    transition: background 0.7s cubic-bezier(.68,-0.55,.27,1.55);
+}
+/* Premium Intro Styles */
+.intro-premium-bg {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(120deg, #23243a 0%, #1a1a2e 100%);
+    overflow: hidden;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeInBg 1.2s;
+}
+.intro-premium-bg::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(circle at 60% 40%, #ff69b4 0%, #23243a 80%);
+    opacity: 0.12;
+    z-index: 1;
+    pointer-events: none;
+    animation: premiumBgMove 8s linear infinite alternate;
+}
+@keyframes premiumBgMove {
+    0% { background-position: 60% 40%; }
+    100% { background-position: 40% 60%; }
+}
+.intro-premium-card {
+    position: relative;
+    z-index: 2;
+    background: rgba(255,255,255,0.10);
+    border-radius: 32px;
+    box-shadow: 0 8px 48px #ff69b4aa, 0 2px 12px #fff3;
+    padding: 64px 48px 48px 48px;
+    min-width: 340px;
+    max-width: 90vw;
+    text-align: center;
+    backdrop-filter: blur(16px) saturate(1.3);
+    border: 2px solid rgba(255,255,255,0.18);
+    animation: popIn 1.2s cubic-bezier(.68,-0.55,.27,1.55);
+}
+.intro-premium-title {
+    font-family: 'Luckiest Guy', cursive, sans-serif;
+    font-size: 4.2rem;
+    color: #fff;
+    letter-spacing: 8px;
+    text-shadow: 0 0 40px #ff69b4, 0 0 24px #fff, 0 2px 0 #000, 0 0 60px #fcb69f;
+    margin-bottom: 12px;
+    background: linear-gradient(90deg, #ff69b4 0%, #fff 50%, #fcb69f 100%);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientMove 4s linear infinite;
+}
+.intro-premium-desc {
+    color: #ffe4e1;
+    font-size: 1.3rem;
+    margin-bottom: 40px;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    letter-spacing: 1.5px;
+}
+.premium-btn {
+    font-size: 1.5rem;
+    padding: 18px 48px;
+    border-radius: 14px;
+    border: none;
+    background: linear-gradient(90deg, #ff69b4 0%, #fcb69f 100%);
+    color: #fff;
+    font-family: 'Luckiest Guy', cursive, sans-serif;
+    letter-spacing: 2px;
+    box-shadow: 0 8px 40px #ffb34799, 0 2px 12px #fff3;
+    cursor: pointer;
+    transition: transform 0.25s, box-shadow 0.25s, background 0.25s;
+    outline: none;
+    margin-top: 0;
+    margin-bottom: 0;
+    position: relative;
+    z-index: 2;
+}
+.premium-btn:hover {
+    transform: scale(1.10) translateY(-2px);
+    box-shadow: 0 16px 48px #ff69b4cc, 0 2px 12px #fff5;
+    background: linear-gradient(90deg, #fcb69f 0%, #ff69b4 100%);
+}
+.intro-premium-bg.hide {
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(1.08) translateY(60px) skewY(2deg);
+    transition: opacity 0.7s cubic-bezier(.68,-0.55,.27,1.55), transform 0.7s cubic-bezier(.68,-0.55,.27,1.55);
+/* removed stray closing brace */
+.anime-card img {
+    width: 100%;
+    height: 340px;
+    object-fit: cover;
+    border-bottom: 4px solid #ff69b4;
+    box-shadow: 0 4px 24px #ffb34755;
+    background: #fff;
+    transition: box-shadow 0.3s, border-color 0.3s;
+}
+.anime-card.clicked img {
+    box-shadow: 0 0 40px 10px #ff69b4aa, 0 4px 24px #ffb34755;
+    border-bottom: 4px solid #fcb69f;
+}
+.anime-card .info {
+    padding: 18px 16px 14px 16px;
+}
+.anime-card .info h2 {
+    font-size: 1.3rem;
+    margin: 0 0 8px 0;
+    color: #ff69b4;
+    font-family: 'Luckiest Guy', cursive, sans-serif;
+}
+.anime-card .info p {
+    font-size: 1rem;
+    color: #333;
+    margin: 0;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+
+/* Intro Screen Styles */
+.intro-screen {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #111216;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    z-index: 1000;
+    animation: fadeInBg 1.2s;
+    transition: opacity 0.7s cubic-bezier(.68,-0.55,.27,1.55), transform 0.7s cubic-bezier(.68,-0.55,.27,1.55);
+    will-change: opacity, transform;
+}
+.intro-screen::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(circle at 50% 40%, #23243a 0%, #111216 80%);
+    opacity: 0.85;
+    z-index: -1;
+}
+.intro-screen.hide {
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(1.08) translateY(60px) skewY(2deg);
+}
+}
+.intro-content {
+    text-align: center;
+        text-align: center;
+        width: 100vw;
+        max-width: 100vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 56px;
+        position: relative;
+        z-index: 2;
+}
+.intro-title {
+    font-family: 'Luckiest Guy', cursive, sans-serif;
+    font-size: 5.5rem;
+    color: #fff;
+    letter-spacing: 8px;
+    text-shadow: 0 0 40px #ff69b4, 0 0 24px #fff, 0 2px 0 #000, 0 0 60px #fcb69f;
+    margin-bottom: 0;
+    animation: popIn 1.2s cubic-bezier(.68,-0.55,.27,1.55);
+    background: linear-gradient(90deg, #ff69b4 0%, #fff 50%, #fcb69f 100%);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: popIn 1.2s cubic-bezier(.68,-0.55,.27,1.55), gradientMove 4s linear infinite;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+/* removed stray closing brace */
+}
+.enter-btn {
+    font-size: 2.1rem;
+    padding: 22px 64px;
+    border-radius: 16px;
+    border: none;
+    background: linear-gradient(90deg, #ff69b4 0%, #fcb69f 100%);
+    color: #fff;
+    font-family: 'Luckiest Guy', cursive, sans-serif;
+    letter-spacing: 3px;
+    box-shadow: 0 8px 40px #ffb34799, 0 2px 12px #fff3;
+    cursor: pointer;
+    transition: transform 0.25s, box-shadow 0.25s, background 0.25s;
+    outline: none;
+    margin-top: 0;
+    margin-bottom: 0;
+    position: relative;
+    z-index: 2;
+}
+.enter-btn:hover {
+    transform: scale(1.12) translateY(-4px);
+    box-shadow: 0 16px 48px #ff69b4cc, 0 2px 12px #fff5;
+    background: linear-gradient(90deg, #fcb69f 0%, #ff69b4 100%);
+}
+@keyframes popIn {
+    0% { transform: scale(0.7) translateY(-80px); opacity: 0; }
+    60% { transform: scale(1.1) translateY(10px); opacity: 1; }
+    100% { transform: scale(1) translateY(0); opacity: 1; }
+}
+@keyframes fadeInBg {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
